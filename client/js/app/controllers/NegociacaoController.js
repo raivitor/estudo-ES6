@@ -18,8 +18,9 @@ class NegociacaoController {
     
     //começou com _ para somente o a classe chamar
     _criaNegociacao() {
+        console.log(this._inputData.value);
         return new Negociacao(
-            DateHelper.textoParaData(this._inputData.value),
+            DateHelper.textoParaData(this._inputData.value.trim()),
             this._inputQuantidade.value,
             this._inputValor.value);    
     }
