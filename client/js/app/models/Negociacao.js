@@ -1,10 +1,10 @@
 class Negociacao {
     
     constructor(data, quantidade, valor){
-        this._data = new Date(data.getTime());;
+        this._data = new Date(data.getTime());
         this._quantidade = quantidade;
         this._valor = valor;
-        Object.freeze(this);
+        Object.freeze(this); // para o objeto ser imutável
     }
     
     get volume() {
