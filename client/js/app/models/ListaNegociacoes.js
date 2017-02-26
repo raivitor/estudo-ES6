@@ -1,13 +1,11 @@
 class ListaNegociacoes {
     
-    constructor(observer) {
+    constructor() {
         this._negociacoes = [];
-        this._observer = observer;
     }
     
-    adicionarNegociacao(negociacao) {
+    adicionar(negociacao) {
         this._negociacoes.push(negociacao);
-        this._observer(this);
     }
     
     get negociacoes() {
@@ -16,6 +14,9 @@ class ListaNegociacoes {
 
     esvaziar(){
     	this._negociacoes = [];
-        this._observer(this);
+    }
+
+    get volumeTotal() {
+       return this._negociacoes.reduce((total, n) => total + n.volume, 0.0);
     }
 }
