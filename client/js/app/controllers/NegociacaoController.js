@@ -53,7 +53,7 @@ class NegociacaoController {
                         .map(dado => new Negociacao(new Date(dado.data), dado.quantidade, dado.valor))
                         .forEach(negociacao => this._listaNegociacoes.adicionar(negociacao))
 
-                        this._mesagem.texto = 'Negociações importadas com sucesso.';
+                        this._mensagem.texto = 'Negociações importadas com sucesso.';
                 } else {
                     console.log(xhr.responseText);
                     this._mensagem.texto = 'Não foi possível obter as negociações.';
